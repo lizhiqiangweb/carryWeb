@@ -8,7 +8,7 @@
       <div class="nav">
         <ul>
           <li v-for="(item, index) in navList" :key="index">
-            <router-link :to="{path: item.path}">{{item.name}}</router-link>
+            <router-link :to="{ path : item.path }">{{item.name}}</router-link>
           </li>
         </ul>
       </div>
@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import router from '../../router/router'
 
 export default {
   data() {
@@ -25,11 +24,11 @@ export default {
       navList: [
         {
           name: "首页",
-          path: "../home"
+          path: "/home"
         },
         {
           name: "整木品牌家具图纸库",
-          path: "../zhengmu"
+          path: "/zhengmu"
         },
         {
           name: "完整版家具图纸库",

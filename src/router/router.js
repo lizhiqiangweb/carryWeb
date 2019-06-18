@@ -5,14 +5,12 @@ Vue.use(VueRouter);
 
 const routers = [
     {
-        name: home,
         path: '/home',
-        component: home
+        component: require('@/components/home.vue')
     },
     {
-        name: zhengmu,
-        path: '@/components/zhengmu',
-        component: zhengmu
+        path: '/zhengmu',
+        component: require('@/components/zhengmu.vue')
     },
 ]
 
