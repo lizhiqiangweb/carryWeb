@@ -3,20 +3,31 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routers = [
-    {
-        path: '/home',
-        component: require('@/components/home.vue')
-    },
-    {
-        path: '/zhengmu',
-        component: require('@/components/zhengmu.vue')
-    },
-]
+import home from '../components/home'
+import zhengmu from '../components/zhengmu'
+import classFy from '../components/classFy'
+import completePics from '../components/completePics'
 
 const router = new VueRouter({
     mode: 'history',
-    routers
+    routes: [
+        {
+            path: '/home',
+            component: home
+        },
+        {
+            path: '/zhengmu',
+            component: zhengmu
+        },
+        {
+            path: '/classFy',
+            component: classFy
+        },
+        {
+            path: '/completePics',
+            component: completePics
+        },
+    ]
 })
 
 export default router;

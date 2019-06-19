@@ -32,11 +32,11 @@ export default {
         },
         {
           name: "完整版家具图纸库",
-          path: "../home"
+          path: "/completePics"
         },
         {
-          name: "所有家居图纸库",
-          path: "../home"
+          name: "分类家居图纸库",
+          path: "/classFy"
         }
       ]
     };
@@ -55,11 +55,14 @@ export default {
 @import "../../assets/css/common.css";
 header {
   background: #00bb80;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  position: fixed;
+  
 }
 .top {
   display: flex;
-  height: 100px;
-  line-height: 100px;
   width: 90%;
   justify-content: center;
   margin: 0 auto;
@@ -73,11 +76,34 @@ header {
 .nav ul {
   display: flex;
   flex-wrap: wrap;
+  margin: 24px 0 0 0;
 }
 .nav ul li {
   margin: 0 2em;
+  transition: all 0.5s ease;
+  height: 36px;
+  line-height: 36px;
+  padding: 6px 0;
+  position: relative;
 }
 .nav ul li a {
   color: #fff;
+}
+
+.nav li::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  top: 46px;
+  background-color: #fff;
+  transform-origin: center;
+  transform: translate(-50%, 0) scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav li:hover::before {
+  transform: translate(-50%, 0) scaleX(1);
 }
 </style>
