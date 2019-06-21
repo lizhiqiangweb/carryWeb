@@ -9,10 +9,10 @@ import classFy from '../components/classFy'
 import completePics from '../components/completePics'
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     routes: [
         {
-            path: '/home',
+            path: '/',
             component: home
         },
         {

@@ -1,10 +1,7 @@
 <!--  -->
 <template>
   <div class="container">
-    <div class="banner">
-      <img :src="bannerUrl" alt>
-    </div>
-    <div class="news">
+    <div class="news" style="margin-top:500px;">
       <p>
         作为家具设计师，想要快速的找到自己的
         <span>设计图纸</span>，怎么能不收藏几个优秀的图纸网站呢？做设计最重要的就是灵感，要是有
@@ -25,7 +22,12 @@
             <p class="discript3">{{item.discript3}}</p>
           </div>
         </div>
-        <img :src="item.imgUrl" alt="腾庆搬运站">
+        <img :src="item.imgUrl" alt="腾青工坊">
+        <div class="imgList">
+          <ul v-for="(item, index) in imgList" :key="index">
+            <li><img :src="item.imgUrl1" /></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -36,7 +38,6 @@ export default {
   name: "name",
   data() {
     return {
-      bannerUrl: require("../assets/images/banner1.jpg"),
       contents: [
         {
           tit: "整木品牌家具图纸库",
@@ -60,7 +61,27 @@ export default {
             "3、通过我们的“完整家具设计图纸库”中资料的灵活拼接，可以不断挖掘新的家具设计款式，这也是许多家具设计师常用的方式，通过这样的拷贝式设计，能大大提高制图效率，你让再也无须担心跟不上市场脚步。",
           imgUrl: require("../assets/images/home_img2.jpg")
         }
-      ]
+      ],
+    imgList: [
+      {
+        imgUrl1: require("../assets/images/homeImg1.jpg")
+      },
+      {
+        imgUrl1: require("../assets/images/homeImg2.jpg")
+      },
+      {
+        imgUrl1: require("../assets/images/homeImg3.jpg")
+      },
+      {
+        imgUrl1: require("../assets/images/homeImg4.jpg")
+      },
+      {
+        imgUrl1: require("../assets/images/homeImg5.jpg")
+      },
+      {
+        imgUrl1: require("../assets/images/homeImg6.jpg")
+      },
+    ]
     };
   },
 
@@ -70,10 +91,12 @@ export default {
 
   mounted: {},
 
-  methods: {}
+  methods: {
+     
+  },
 };
 </script>
-<style>
+<style scoped>
 @import "../assets/css/common.css";
 
 .content-item {
@@ -89,12 +112,12 @@ export default {
   background: #fff;
 }
 .news p {
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   color: #333;
 }
 .news span {
-  font-size: 24px;
+  font-size: 22px;
   color: red;
 }
 .tit-box {
@@ -102,6 +125,7 @@ export default {
   text-align: center;
   height: 130px;
   line-height: 130px;
+  margin: 32px 0 0 0;
 }
 .tit {
   background: url(../assets/images/home_tit_icon.png) no-repeat;
@@ -138,5 +162,25 @@ export default {
   font-size: 18px;
   text-indent: 2em;
   line-height: 1.8em;
+}
+.bannerTit p {
+  font-size: 32px;
+  color: #333;
+  position: absolute;
+  top: 120px;
+  left: 24%;
+  line-height: 3.2em;
+}
+
+.imgList {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.imgList img {
+  width: 195px;
+  height: 195px;
+  display: block;
+  margin: 0 5px;
 }
 </style>

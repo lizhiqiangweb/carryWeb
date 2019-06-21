@@ -1,11 +1,8 @@
 <!--  -->
 <template>
   <div class="container">
-    <div class="banner">
-      <img :src="bannerUrl" alt>
-    </div>
     <!-- 选项卡 -->
-    <div class="tab-box">
+    <div class="tab-box" style="margin-top: 500px;">
       <ul>
         <li
           v-for="(item, index) in tabItems"
@@ -27,7 +24,7 @@
     </p>
     <!-- 标准 迈丹尼 -->
     <div class="zmContent">
-      <div class="zmContent-item" v-for="(item, index) in contents" :key="index">
+      <div class="zmContent-item" v-for="(item, index) in contents" :key="index" v-if="index==0">
         <div class="tit-box">
           <p class="tit">{{item.tit}}</p>
         </div>
@@ -43,28 +40,57 @@
       </div>
       <div class="imgBox">
         <div class="imgLeft">
-          <img src="../assets/images/zm_img3.jpg" alt="">
+          <img src="../assets/images/zm_img3.jpg" alt="腾青工坊">
         </div>
         <div class="imgList">
           <div class="imgList1">
-            <img src="../assets/images/zm_img4.jpg" alt="">
-            <img src="../assets/images/zm_img5.jpg" alt="">
+            <img src="../assets/images/zm_img4.jpg" alt="腾青工坊">
+            <img src="../assets/images/zm_img5.jpg" alt="腾青工坊">
           </div>
           <div class="imgList2">
-            <img src="../assets/images/zm_img6.jpg" alt="">
-            <img src="../assets/images/zm_img7.jpg" alt="">
+            <img src="../assets/images/zm_img6.jpg" alt="腾青工坊">
+            <img src="../assets/images/zm_img7.jpg" alt="腾青工坊">
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- 万仕达 -->
+    <div class="zmContent1">
+      <div class="zmContent-item">
+        <div class="tit-box">
+          <p class="zmTit1">{{zmContent1.zmContent1Title}}</p>
+        </div>
+        <div class="main-content">
+          <div class="zmContent-top">
+            <p>{{zmContent1.zmContent1Tit}}</p>
+            <p>{{zmContent1.zmContent1Dis}}</p>
+            <img :src="zmContent1.zmContent1Img1" />
+            <img :src="zmContent1.zmContent1Img2" />
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 简木 -->
     <div class="zmContent">
-      <div class="zmContent-item" v-for="(item, index) in contents" :key="index">
+      <div class="zmContent-item" v-for="(item, index) in contents" :key="index" v-if="index==1">
         <div class="tit-box">
-          <p class="tit">万仕达</p>
+          <p class="tit">{{item.tit}}</p>
         </div>
         <div class="main-content">
-          
+          <div class="zmDis">
+            <p class="disTit">{{item.disTit}}</p>
+            <div class="dis-content">
+              <p class="disContent">{{item.disContent}}</p>
+            </div>
+          </div>
+          <img src="../assets/images/zm_img10.jpg" />
+        </div>
+      </div>
+      <div class="imgBox">
+        <div class="imgList">
+          <img src="../assets/images/zm_img11.jpg" alt="腾青工坊">
+          <img src="../assets/images/zm_img12.jpg" alt="腾青工坊">
         </div>
       </div>
     </div>
@@ -76,7 +102,7 @@
 export default {
   data() {
     return {
-      bannerUrl: require("../assets/images/banner2.jpg"),
+      bannerUrl: require("../assets/images/banner1.jpg"),
       cur: 0,
       tabItems: [
         {
@@ -98,8 +124,20 @@ export default {
           tit: '标准 迈丹尼',
           disTit: '标准迈丹尼：（72个文件夹）',
           disContent: '铜条玻璃图片、迈丹尼餐、迈丹尼酒柜、迈丹尼案例、迈丹尼木门、迈丹尼护墙、迈丹尼扫描、迈丹尼展厅、迈丹尼客厅、迈丹尼图片、迈丹尼厨房、迈丹尼卧房、迈丹尼书房、迈丹尼CAD、温莎古堡衣帽间、温莎古堡橱柜、彼瑞丽居产品、实木整体橱柜样板、613e迈丹尼展厅'
+        },
+        {
+          tit: '简木',
+          disTit: '简木：（11个文件夹）',
+          disContent: '简木商学院经销商资料、报价系统、商学院后续增加及修改标准、CAD素材资料、简木商学院经销商资料汇总、简木常用雕花模块、简木线条模板；罗马柱设计模块、简木常用雕花模块增加部分、简木美式系列、简木欧式系列'
         }
-      ]
+      ],
+      zmContent1: {
+        zmContent1Title: '万仕达',
+        zmContent1Tit: '万仕达：（18个文件夹）',
+        zmContent1Dis: '技术图、店面、店面设计、复合墙板隐形门、公司资料、五金表、万仕达日常电子文档、万仕达新展厅CAD、万仕达下单术语、模板多样归类、工作资料、通讯录。',
+        zmContent1Img1: require('../assets/images/zm_img8.jpg'),
+        zmContent1Img2: require('../assets/images/zm_img9.jpg')
+      }
     };
   },
 
@@ -112,7 +150,7 @@ export default {
   methods: {}
 };
 </script>
-<style>
+<style scoped>
 @import "../assets/css/common.css";
 
 .remarks {
@@ -147,7 +185,7 @@ export default {
 .tab-box ul li:hover {
   cursor: pointer;
 }
-.active {
+.tab-box ul li.active {
   background: #00bb80;
   color: #fff;
 }
@@ -159,6 +197,7 @@ export default {
 .tab-item p {
   line-height: 1.8em;
   font-size: 16px;
+  color: #333;
 }
 .data-img {
   text-align: center;
@@ -167,6 +206,10 @@ export default {
 /* 标准 迈丹尼 */
 .zmContent {
   background: #fff;
+  padding-bottom: 30px;
+}
+.zmContent1 {
+  background: #00bb80;
   padding-bottom: 30px;
 }
 .tit-box {
@@ -185,7 +228,7 @@ export default {
   font-size: 24px;
   color: #333;
 }
-.tit1 {
+.zmTit1 {
   background: url(../assets/images/home_tit_icon1.png) no-repeat;
   height: 80px;
   line-height: 80px;
@@ -194,7 +237,7 @@ export default {
   text-align: center;
   margin: 0 auto;
   font-size: 24px;
-  color: #333;
+  color: #fff;
 }
 .main-content {
   width: 1200px;
@@ -219,4 +262,11 @@ export default {
   margin: 1px 0 0 7px;
 }
 
+.zmContent-top p {
+  color: #fff;
+  font-size: 18px;
+}
+.zmContent-top img {
+  margin: 28px 0 0 0;
+}
 </style>
