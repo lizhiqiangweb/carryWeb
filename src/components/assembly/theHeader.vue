@@ -16,7 +16,7 @@
     <!-- banner -->
     <div class="banner">
       <div v-for="(item, index) in imgList" v-show="index===mark" :key="index" class="slideshow">
-        <img :src="item.src" style="width:100%;height:600px;">
+        <img :src="item.src">
       </div>
       <div class="bar">
         <span v-for="(item, index) in imgList" :class="{ 'active1':index===mark }" :key="index"></span>
@@ -93,6 +93,7 @@ header {
   height: 100px;
   line-height: 100px;
   width: 100%;
+  position: relative;
 }
 .top {
   display: flex;

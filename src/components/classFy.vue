@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="container" style="margin-top: 500px;">
+  <div class="container">
     <div class="classFy-item" v-for="(item, index) in classFys" :key="index">
       <p class="fyTit">{{item.fyTit}}</p>
       <p class="fyContent">

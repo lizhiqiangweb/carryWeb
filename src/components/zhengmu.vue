@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <!-- 选项卡 -->
-    <div class="tab-box" style="margin-top: 500px;">
+    <div class="tab-box">
       <ul>
         <li
           v-for="(item, index) in tabItems"

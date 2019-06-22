@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="container">
-    <div class="news" style="margin-top:500px;">
+    <div class="news">
       <p>
         作为家具设计师，想要快速的找到自己的
         <span>设计图纸</span>，怎么能不收藏几个优秀的图纸网站呢？做设计最重要的就是灵感，要是有
@@ -174,13 +174,17 @@ export default {
 
 .imgList {
   width: 1200px;
-  margin: 0 auto;
+  margin: 8px auto 0;
   display: flex;
+}
+.imgList li:hover img {
+  transform: scale(1.1)
 }
 .imgList img {
   width: 195px;
   height: 195px;
   display: block;
   margin: 0 5px;
+  transition: all 0.5s ease-in-out;
 }
 </style>

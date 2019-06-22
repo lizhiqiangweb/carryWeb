@@ -14,22 +14,21 @@ li {
 }
 .container {
   background: #f0f0f0;
-  padding-top: 100px;
+  padding-top: 31%;
 }
 .banner {
-  position: relative;
   width: 100%;
-  height: 600px;
+  height: auto;
   overflow: hidden;
+  position: relative;
 }
 .banner img {
   width: 100%;
   height: auto;
-  float: left;
 }
 .slideshow {  
   width: 100%;  
-  height: 600px;  
+  height: auto;  
 }  
 .bar {  
   position: absolute;  
